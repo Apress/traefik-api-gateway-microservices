@@ -1,0 +1,19 @@
+[http]
+  [http.routers]
+    [http.routers.guest-router]
+      entryPoints = ["web"]
+      middlewares = ["guestbook-middleware"]
+      rule = "Host(`localhost`)"
+      service = "guestbook-service"
+
+  [http.middlewares]
+    [http.middlewares.guestbook-middleware]
+      [http.middlewares.guestbook-middleware.stripPrefix]
+        prefixes = ["/guest"]
+
+  [http.services]
+    [http.services.guestbook-service.loadBalancer]
+      [[http.services.guestbook-service.loadBalancer.servers]]
+        url = "http://localhost:9090/"
+      [[http.services.guestbook-service.loadBalancer.servers]]
+        url = "http://localhost:9191/"

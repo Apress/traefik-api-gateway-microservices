@@ -1,0 +1,20 @@
+additionalArguments:
+  - "--log.level=INFO"
+
+ports:
+  # The name of this one can't be changed as it is used for the readiness and
+  # liveness probes, but you can adjust its config to your liking
+  traefik:
+    # Defines whether the port is exposed if service.type is LoadBalancer or
+    # NodePort.
+    #
+    # You SHOULD NOT expose the traefik port on production deployments.
+    # If you want to access it from outside of your cluster,
+    # use `kubectl proxy` or create a secure ingress
+    expose: true
+
+# Options for the main traefik service, where the entrypoints traffic comes
+# from.
+service:
+  type: NodePort
+

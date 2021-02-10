@@ -1,0 +1,111 @@
+udp :
+  routers :
+    tftp-router :
+      entryPoints :
+      - tftp
+      service : tftp-service
+
+  services:
+    tftp-service :
+      weighted:
+        services:
+        - name: tftp-1-service
+          weight: 3
+        - name: tftp-2-service
+          weight: 1
+    tftp-1-service:
+      terminationDelay: 42
+      loadBalancer :
+        servers :
+        - address  : "localhost:69"
+        - address  : "localhost:69"
+    tftp-2-service:
+      terminationDelay: 42
+      loadBalancer :
+        servers :
+        - address  : "localhost:69"
+
+tcp :
+  routers :
+    guest-router :
+      entryPoints :
+      - mongo
+      rule : HostSNI(`*`)
+      service : mongo-tcp-service
+
+  services :
+    mongo-tcp-service :
+      weighted:
+        services:
+        - name: mongo-1-service
+          weight: 3
+        - name: mongo-2-service
+          weight: 1
+
+    mongo-1-service:
+      terminationDelay: 42
+      loadBalancer :
+        servers :
+        - address  : "localhost:27017"
+        - address  : "localhost:27018"
+
+    mongo-2-service:
+      terminationDelay: 42
+      loadBalancer :
+        servers :
+        - address  : "localhost:27017"
+
+
+
+http :
+  routers :
+    guest-router :
+      entryPoints :
+      - web
+      rule : Host(`localhost`)
+      service : guestbook-wt-service
+
+  services :
+    guestbook-service :
+      loadBalancer :
+        sticky :
+          cookie : {}
+        servers :
+        - url  : "http://192.168.1.9:9090/"
+        - url  : "http://192.168.1.9:9191/"
+#        healthCheck:
+#          scheme : http
+#          path: /
+#          interval: "10s"
+#          timeout: "1s"
+
+    guestbook-wt-service :
+        weighted:
+          services:
+          - name: guestv2
+            weight: 3
+          sticky:
+            cookie:
+              httpOnly: true
+
+    guestv1 :
+      loadBalancer :
+        sticky:
+          cookie:
+        servers :
+        - url  : "http://192.168.1.9:9090/"
+        healthCheck:
+          scheme : http
+          path: /
+          interval: "10s"
+          timeout: "1s"
+
+    guestv2 :
+      loadBalancer :
+        servers :
+        - url  : "http://192.168.1.9:9191/"
+        healthCheck:
+          scheme : http
+          path: /
+          interval: "10s"
+          timeout: "1s"

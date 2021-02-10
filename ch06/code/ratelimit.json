@@ -1,0 +1,17 @@
+[
+	{
+		"key": "traefik/http/middlewares/ratelimit-check/ratelimit/average",
+		"flags": 0,
+		"value": "MQ=="
+	},
+	{
+		"key": "traefik/http/middlewares/ratelimit-check/ratelimit/period",
+		"flags": 0,
+		"value": "MzA="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/middlewares/2",
+		"flags": 0,
+		"value": "cmF0ZWxpbWl0LWNoZWNr"
+	}
+]

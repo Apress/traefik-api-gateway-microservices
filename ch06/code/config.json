@@ -1,0 +1,102 @@
+[
+	{
+		"key": "traefik/http/middlewares/petclinic-customers-stripprefix/stripPrefix/prefixes/0",
+		"flags": 0,
+		"value": "L2FwaS9jdXN0b21lcg=="
+	},
+	{
+		"key": "traefik/http/middlewares/petclinic-visits-stripprefix/stripPrefix/prefixes/0",
+		"flags": 0,
+		"value": "L2FwaS92aXNpdA=="
+	},
+	{
+		"key": "traefik/http/middlewares/petclinic-vets-stripprefix/stripPrefix/prefixes/0",
+		"flags": 0,
+		"value": "L2FwaS92ZXQ="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/entryPoints/0",
+		"flags": 0,
+		"value": "d2Vi"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/middlewares/0",
+		"flags": 0,
+		"value": "cGV0Y2xpbmljLWN1c3RvbWVycy1zdHJpcHByZWZpeA=="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/rule",
+		"flags": 0,
+		"value": "UGF0aFByZWZpeChgL2FwaS9jdXN0b21lci9gKQ=="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/service",
+		"flags": 0,
+		"value": "Y3VzdG9tZXJzLXNlcnZpY2U="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-route/entryPoints/0",
+		"flags": 0,
+		"value": "d2Vi"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/priority",
+		"flags": 0,
+		"value": "NDI="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-route/rule",
+		"flags": 0,
+		"value": "SG9zdFJlZ2V4cChge25hbWU6Lip9YCk="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-route/service",
+		"flags": 0,
+		"value": "cGV0Y2xpbmljLXVp"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/entryPoints/0",
+		"flags": 0,
+		"value": "d2Vi"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/middlewares/0",
+		"flags": 0,
+		"value": "cGV0Y2xpbmljLXZldHMtc3RyaXBwcmVmaXg="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/priority",
+		"flags": 0,
+		"value": "NDI="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/rule",
+		"flags": 0,
+		"value": "UGF0aFByZWZpeChgL2FwaS92ZXQvYCk="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/service",
+		"flags": 0,
+		"value": "dmV0cy1zZXJ2aWNl"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-visits-route/entryPoints/0",
+		"flags": 0,
+		"value": "d2Vi"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-visits-route/middlewares/0",
+		"flags": 0,
+		"value": "cGV0Y2xpbmljLXZpc2l0cy1zdHJpcHByZWZpeA=="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-visits-route/rule",
+		"flags": 0,
+		"value": "UGF0aFByZWZpeChgL2FwaS92aXNpdC9gKQ=="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-visits-route/service",
+		"flags": 0,
+		"value": "dmlzaXRzLXNlcnZpY2U="
+	}
+]

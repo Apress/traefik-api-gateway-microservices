@@ -1,0 +1,37 @@
+entryPoints:
+  mongo:
+    address: ':4445'
+  https:
+    address: ':443'
+  http:
+    address: :80
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+providers:
+  file:
+    watch: true
+    filename: tls-config.yml
+api:
+  dashboard: true
+certificatesResolvers:
+  letsencrypt:
+    # Enable ACME (Let's Enc
+    acme:
+
+      # Email address used for registration.
+      #
+      # Required
+      #
+      email: "<valid email address>"
+
+      # File or key used for certificates storage.
+      #
+      # Required
+      #
+      storage: "acme.json"
+
+
+      tlsChallenge: {}

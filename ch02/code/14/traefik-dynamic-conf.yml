@@ -1,0 +1,15 @@
+## Dynamic configuration
+http:
+  routers:
+    router0:
+      entryPoints:
+      - web
+      service: hello-world
+      rule: Path(`/hello-world`)
+
+  services:
+    hello-world:
+      loadBalancer:
+        servers:
+        - url: "http://localhost:9080/"
+

@@ -1,0 +1,35 @@
+entryPoints :
+  web :
+    address : ":80"
+
+providers :
+  file :
+    directory : /Users/rahulsharma/Projects/traefik-book/ch05/code
+    watch : true
+    filename : config
+    debugLogGeneratedTemplate : true
+
+api :
+  insecure : true
+  dashboard : true
+
+log:
+  level: INFO
+  filePath: traefik.json.log
+  format: json
+
+accessLog:
+  filePath: logs/access.json.log
+  format: json
+  bufferingSize: 50
+
+tracing:
+  zipkin:
+    httpEndpoint: http://localhost:9411/api/v2/spans
+    id128Bit : false
+    sameSpan: true
+
+metrics:
+  prometheus:
+     addEntryPointsLabels: true
+     addServicesLabels : true

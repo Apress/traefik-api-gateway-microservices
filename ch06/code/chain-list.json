@@ -1,0 +1,12 @@
+[
+	{
+		"key": "traefik/http/middlewares/chain-list/chain/middlewares",
+		"flags": 0,
+		"value": "cmF0ZWxpbWl0LWNoZWNrLHJlc3BvbnNlLWNoZWNr"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/middlewares/0",
+		"flags": 0,
+		"value": "Y2hhaW4tbGlzdA=="
+	}
+]

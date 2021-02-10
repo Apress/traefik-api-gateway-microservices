@@ -1,0 +1,18 @@
+tcp :
+  routers :
+    mongo-router :
+      entryPoints :
+      - mongo
+      rule : "HostSNI(`tlstraefik.rahulsharma.page`)" # Change to valid DNS name
+      service : mongo-tcp-service
+      tls:
+        certResolver: "letsencrypt"
+        domains:
+          - main: "tlstraefik.rahulsharma.page" # Change to valid DNS name
+
+  services :
+    mongo-tcp-service :
+      loadBalancer :
+        servers :
+        - address  : "localhost:27017"
+

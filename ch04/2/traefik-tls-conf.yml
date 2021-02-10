@@ -1,0 +1,20 @@
+## Dynamic configuration
+tcp :
+  routers :
+    mongo-router :
+      entryPoints :
+      - websecure
+      rule : "HostSNI(`localhost`) || HostSNI(`127.0.0.1`)"
+      service : mongo-tcp-service
+      tls: {}
+
+  services :
+    mongo-tcp-service :
+      loadBalancer :
+        servers :
+        - address  : "localhost:27017"
+
+tls:
+  certificates:
+    - certFile: localhost+1.pem
+      keyFile: localhost+1-key.pem

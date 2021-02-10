@@ -1,0 +1,13 @@
+# Entrypoints have to be defined as static configuration in traefik.yml
+entryPoints:
+  web:
+   address: ":80"
+
+providers:
+  file:
+    filename: "traefik-dynamic-conf.yml"
+    watch: true
+
+api:
+  insecure: true
+  dashboard: true

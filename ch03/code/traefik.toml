@@ -1,0 +1,18 @@
+[entryPoints]
+  [entryPoints.web]
+  address = ":4444"
+  [entryPoints.mongo]
+  address = ":4445"
+  [entryPoints.tftp]
+  address = ":4446/udp"
+
+[providers]
+  [providers.file]
+    directory = "/Users/rahulsharma/Projects/traefik-book/ch03/code"
+    watch = true
+    filename = "config"
+    debugLogGeneratedTemplate = true
+
+[api]
+  insecure = true
+  dashboard = true

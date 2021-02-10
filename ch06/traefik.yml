@@ -1,0 +1,22 @@
+serversTransport:
+  forwardingTimeouts:
+    responseHeaderTimeout: 5s
+    dialTimeout: 10s
+    idleConnTimeout: 10s
+
+entryPoints :
+  web :
+    address : ":80"
+
+providers:
+  consul:
+    endpoints:
+      - "127.0.0.1:8500"
+    rootKey : "traefik"
+
+api :
+  insecure : true
+  dashboard : true
+
+log:
+  level: TRACE

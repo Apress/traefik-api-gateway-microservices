@@ -1,0 +1,17 @@
+[
+	{
+		"key": "traefik/http/middlewares/retry-check/retry/attempts",
+		"flags": 0,
+		"value": "Mw=="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/middlewares/1",
+		"flags": 0,
+		"value": "cmV0cnktY2hlY2s="
+	},
+	{
+		"key": "traefik/http/routers/petclinic-vets-route/priority",
+		"flags": 0,
+		"value": "Mg=="
+	}
+]

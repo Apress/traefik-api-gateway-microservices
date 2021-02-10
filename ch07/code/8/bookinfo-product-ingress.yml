@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: bookinfo-productpage-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/productpage`) || PathPrefix(`/static`) || Path(`/login`) || Path(`/logout`) || PathPrefix(`/api/v1/products`)
+    kind: Rule
+    services:
+    - name: productpage
+      port: 9080

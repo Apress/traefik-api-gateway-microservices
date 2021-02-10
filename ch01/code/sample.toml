@@ -1,0 +1,4 @@
+
+[api]
+  insecure = true
+  dashboard = true

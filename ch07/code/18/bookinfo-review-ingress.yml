@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: bookinfo-reviews-ingress
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: PathPrefix(`/reviews`)
+    kind: Rule
+    services:
+      # We can define multiple services here for simple Round robin load balancing
+    - name: reviews-v1v2
+      kind: TraefikService
+    - name: reviews-red
+      port: 9080

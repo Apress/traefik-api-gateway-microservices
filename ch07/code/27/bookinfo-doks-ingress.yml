@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: productpage-ingresstls
+spec:
+  entryPoints:
+    - websecure
+  routes:
+     # change Host to valid DNS name below
+  - match: Host(`k8straefik.rahulsharma.page`) && (PathPrefix(`/productpage`) || PathPrefix(`/static`) || Path(`/login`) || Path(`/logout`) || PathPrefix(`/api/v1/products`))
+    kind: Rule
+    services:
+    - name: productpage
+      port: 9080
+  tls:
+    certResolver: letsencrypt

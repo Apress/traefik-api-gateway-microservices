@@ -1,0 +1,8 @@
+# Entrypoints have to be defined as static configuration in traefik.yml
+entryPoints:
+  web:
+   address: ":80"
+
+api:
+  insecure: true
+  dashboard: true

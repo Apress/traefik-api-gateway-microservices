@@ -1,0 +1,22 @@
+http :
+  routers :
+    httpbin-router :
+      entryPoints :
+      - web
+      rule : HostRegexp(`{name:.*}`)
+      middlewares :
+      - test-ipwhitelist
+      service : httpbin-service
+
+  middlewares:
+    test-ipwhitelist:
+      ipWhiteList:
+        sourceRange:
+          - "127.0.0.1/32"
+          - "::1"
+
+  services :
+    httpbin-service :
+      loadBalancer :
+        servers :
+        - url  : "http://192.168.1.4:8000/"

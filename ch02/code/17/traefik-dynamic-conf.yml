@@ -1,0 +1,23 @@
+## Dynamic configuration
+http:
+  routers:
+    router0:
+      entryPoints:
+      - web
+      middlewares:
+      - basic-auth
+      service: hello-world
+      rule: Path(`/hello-world`)
+
+  services:
+    hello-world:
+      loadBalancer:
+        servers:
+        - url: "http://localhost:9080/"
+
+# Declaring the basic auth middleware with the user credentials
+  middlewares:
+    basic-auth:
+      basicAuth:
+        users:
+          - "admin:$apr1$JsindKAS$zCWAvabJOgQvI.Dd3zjtE." 

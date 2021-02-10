@@ -1,0 +1,18 @@
+entryPoints :
+  web :
+    address : ":80"
+  mongo :
+    address : ":27117"
+  tftp :
+    address : ":69/udp"
+
+providers :
+  file :
+    directory : /Users/rahulsharma/Projects/traefik-book/ch03/code
+    watch : true
+    filename : config
+    debugLogGeneratedTemplate : true
+
+api :
+  insecure : true
+  dashboard : true

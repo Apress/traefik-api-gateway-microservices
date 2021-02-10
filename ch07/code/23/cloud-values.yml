@@ -1,0 +1,12 @@
+additionalArguments:
+  - "--certificatesresolvers.letsencrypt.acme.email=<valid email addesss>"
+  - "--certificatesresolvers.letsencrypt.acme.httpchallenge.entrypoint=web"
+  - "--certificatesresolvers.letsencrypt.acme.storage=/data/acme.json"
+  - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-staging-v02.api.letsencrypt.org/directory"
+  # - "--certificatesresolvers.letsencrypt.acme.caserver=https://acme-v02.api.letsencrypt.org/directory"
+  - "--log.level=DEBUG"
+
+persistence:
+  enabled: true
+  size: 1Gi
+  storageClass: "do-block-storage"

@@ -1,0 +1,33 @@
+tcp :
+  routers :
+    mongo-router :
+      entryPoints :
+      - mongo
+      rule : "HostSNI(`tlstraefik.rahulsharma.page`)" # change to valid DNS name
+      service : mongo-tcp-service
+      tls:
+        passthrough: true
+
+  services :
+    mongo-tcp-service :
+      loadBalancer :
+        servers :
+        - address  : "localhost:27017"
+
+http:
+  routers:
+    dashboard:
+      entryPoints:
+        - https
+         # change Host to valid DNS name below
+      rule: "Host(`tlstraefik.rahulsharma.page`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))"
+      service: api@internal
+      tls:
+        certResolver: "letsencrypt"      
+      middlewares:
+        - auth
+  middlewares:
+    auth:
+      basicAuth:
+        users:
+          - "admin:$apr1$JsindKAS$zCWAvabJOgQvI.Dd3zjtE." 

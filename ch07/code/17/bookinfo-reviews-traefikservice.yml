@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: TraefikService
+metadata:
+  name: reviews-v1v2
+spec:
+  weighted:
+    services:
+      - name: reviews-black
+        port: 9080
+        weight: 3
+      - name: reviews-noratings
+        port: 9080
+        weight: 1

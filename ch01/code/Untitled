@@ -1,0 +1,15 @@
+# Default:
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+
+  [entryPoints.https]
+    address = ":443"
+
+  [entryPoints.traefik]
+    address = ":8000"
+
+[api]
+  insecure = true
+  dashboard = true
+[ping]

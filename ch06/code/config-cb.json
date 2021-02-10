@@ -1,0 +1,22 @@
+[
+	{
+		"key": "traefik/http/services/customers-service/loadBalancer/servers/0/url",
+		"flags": 0,
+		"value": "aHR0cDovLzEyNy4wLjAuMTo2MzEzMy8="
+	},
+	{
+		"key": "traefik/http/services/petclinic-ui/loadBalancer/servers/0/url",
+		"flags": 0,
+		"value": "aHR0cDovLzEyNy4wLjAuMTo5MDAwLw=="
+	},
+	{
+		"key": "traefik/http/services/vets-service/loadBalancer/servers/0/url",
+		"flags": 0,
+		"value": "aHR0cDovLzEyNy4wLjAuMTo2MzgwNC8="
+	},
+	{
+		"key": "traefik/http/services/visits-service/loadBalancer/servers/0/url",
+		"flags": 0,
+		"value": "aHR0cDovLzEyNy4wLjAuMTo2MzY4MS8="
+	}
+]

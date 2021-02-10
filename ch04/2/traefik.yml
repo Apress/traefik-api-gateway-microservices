@@ -1,0 +1,17 @@
+# Entrypoints have to be defined as static configuration in traefik.yml
+entryPoints:
+  websecure:
+    address: ":443"
+
+log:
+  level: DEBUG
+
+
+providers:
+  file:
+    filename: "traefik-tls-conf.yml"
+    watch: true
+
+api:
+  insecure: true
+  dashboard: true

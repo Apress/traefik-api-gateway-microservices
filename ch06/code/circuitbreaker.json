@@ -1,0 +1,12 @@
+[
+	{
+		"key": "traefik/http/middlewares/response-check/circuitbreaker/expression",
+		"flags": 0,
+		"value": "UmVzcG9uc2VDb2RlUmF0aW8oNTAwLCA2MDAsIDAsIDYwMCkgPiAwLjI1"
+	},
+	{
+		"key": "traefik/http/routers/petclinic-customers-route/middlewares/1",
+		"flags": 0,
+		"value": "cmVzcG9uc2UtY2hlY2s="
+	}
+]
