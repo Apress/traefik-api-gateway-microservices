@@ -1,5 +1,9 @@
 # guestbook
 
-compile : mvn clean install
-Run : mvn jetty:run 
-mvn jetty:run -DappName=myapp
+> Pre-Requsite : You need Java installed on the system
+
+**Compile** : ./mvnw clean install
+
+**Run** : ./mvnw jetty:run 
+
+**Run** :./mvnw jetty:run -DappName=myapp
