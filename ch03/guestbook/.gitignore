@@ -1,0 +1,8 @@
+.settings
+.idea/
+target/
+guestbook-spring.iml
+bin/
+.settings/
+.classpath
+.project
