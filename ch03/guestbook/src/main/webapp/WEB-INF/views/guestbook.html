@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title th:text="Guestbook"></title>
+    <style>
+       .hello-title {
+        color: darkgreen;
+     }
+    </style>
+</head>
+<body>
+<h2>GuestBook Details- <span th:text="${appName}"></span></h2>
+<div>Create a New Guest Book Entry</div>
+<form action="#" th:action="@{/}" th:object="${guestbookentry}" method="post">
+    <div>
+        <label>Name</label>
+        <input type="text" th:field="*{name}" />
+    </div>
+</form>
+<br>
+<div th:if="${latest != null}">
+    <label>Last Saved</label>
+    <label th:text="${latest.name}" />
+</div>
+
+</body>
+</html>
